@@ -17,6 +17,10 @@ class User extends Authenticatable
         return $this->type === self::ADMIN_TYPE;    
     }
 
+    public function registrations()
+    {
+        return $this->belongsTo('Registration');
+    }
 
     /**
      * The attributes that are mass assignable.
