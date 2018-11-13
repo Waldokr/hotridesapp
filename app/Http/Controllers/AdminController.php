@@ -11,42 +11,42 @@ class AdminController extends Controller
     {
         return view('admin');
     }
-    public function viewRegistration
+    public function viewRegistration()
     {
     	$registrations = Registration::latest()->get();	
     	return view('admin.viewRegistration', compact('registrations'));
     }
-    public function viewClubs
+    public function viewClubs()
     {
     	$clubs = Club::latest()->get();
     	return view('admin.viewClubs', compact('clubs'));
     }
-    public function viewDonations
+    public function viewDonations()
     {
     	$donations = Donation::latest()->get(); 
     	return view('admin.viewDonations');
     }
-    public function viewSponsors
+    public function viewSponsors()
     {
     	$sponsors = Sponsor::latest()->get();
     	return view('admin.viewSponsors');
     }
-    public function storeRegistration
+    public function storeRegistration()
     {
     	publish(new Registration(request()));
     	return redirect('/admin');
     }
-    public function storeClubs
+    public function storeClubs()
     {
     	publish(new Club(request()));
     	return redirect('/admin');
     }
-    public function storeDonations
+    public function storeDonations()
     {
     	publish(new Donation(request()));
     	return redirect('/admin');
     }
-    public function storeSponsors
+    public function storeSponsors()
     {
     	publish(new Sponsor(request()));
     	return redirect('/admin');
