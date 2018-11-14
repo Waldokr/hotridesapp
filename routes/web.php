@@ -22,3 +22,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@admin')    
     ->middleware('is_admin')    
     ->name('admin');
+
+Route::resource('events','EventController');
+
+Route::post('/events', 'EventController@store');
+
+Route::post('/events/{event}', 'EventController@update');
+
