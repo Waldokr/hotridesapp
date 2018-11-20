@@ -30,3 +30,5 @@ Route::post('/events', 'EventController@store');
 Route::get('/events', 'EventController@index')->name('events');
 Route::post('/events/{event}', 'EventController@update');
 
+Route::get('/users', 'UsersController@index')->name('users');
+
