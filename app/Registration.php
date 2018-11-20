@@ -8,12 +8,12 @@ class Registration extends Model
 {
     public function users()
     {
-        return $this->belongsTo('User');
+        return $this->hasOne('App\User');
     }
 
     public function vehicles()
     {
-        return $this->belongsTo('Vehicle');
+        return $this->hasOne('App\Vehicle');
     }
 
 }

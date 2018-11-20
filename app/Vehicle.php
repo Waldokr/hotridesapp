@@ -8,6 +8,6 @@ class Vehicle extends Model
 {
     public function registrations()
     {
-        return $this->belongsTo('Registration');
+        return $this->hasOne('App\Registration');
     }
 }
