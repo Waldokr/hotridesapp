@@ -29,3 +29,4 @@ Route::post('/events', 'EventController@store');
 
 Route::post('/events/{event}', 'EventController@update');
 
+Route::resource('vehicles','VehilcleController');

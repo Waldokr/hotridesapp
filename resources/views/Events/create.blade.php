@@ -6,7 +6,7 @@
 @section('content')
 
     <div class="col-sm-8 blog-main">
-		<h1>Create An Event</h1>
+		<h1>Create Event</h1>
 		<form method="POST" action="/events">
 
         	{{ csrf_field() }} 

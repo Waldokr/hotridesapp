@@ -20,12 +20,12 @@ class EventController extends Controller
     */
    public function store(Request $request)
    {
-        /*$this->validate(request(), [
+        $this->validate(request(), [
             'name' => 'required',
             'date' => 'required',
             'early_cost' => 'required',
             'reg_cost' => 'required'
-        ]);*/
+        ]);
 
 
         $event= new \App\event;
@@ -43,12 +43,12 @@ class EventController extends Controller
 
    public function update(Request $request, $id)
    {
-        /*$this->validate(request(), [
+        $this->validate(request(), [
             'name' => 'required',
             'date' => 'required',
             'early_cost' => 'required',
             'reg_cost' => 'required'
-        ]);*/
+        ]);
 
 
         $event= \App\Event::find($id);
