@@ -67,7 +67,7 @@ class EventController extends Controller
    public function index()
     {
         $events=\App\Event::all();
-        return view('Events/show',compact('events'));
+        return view('events/show',compact('events'));
     }
 
     public function edit($id)

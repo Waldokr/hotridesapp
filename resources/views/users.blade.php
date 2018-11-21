@@ -56,6 +56,23 @@
 		    <label for="title">Amount:</label>
 		    <input type="text" class="form-control" id="amount" name="amount">
 		  </div>
+		  <div class="form-group">
+		    <label>Money Type:</label>
+		    <input type="radio" name="moneytype" value="debit"> Debit<br>
+		    <input type="radio" name="moneytype" value="credit"> Credit<br>
+		  </div>
+		  <div class="form-group">
+		    <label>Card Number:</label>
+		    <input type="text" class="form-control" id="amount" name="cardnumber">
+		  </div>
+		  <div class="form-group">
+		    <label>Experation Date:</label>
+		    <input type="text" class="form-control" id="amount" name="experationdate">
+		  </div>
+		  <div class="form-group">
+		    <label>Secuirty Number:</label>
+		    <input type="text" class="form-control" id="amount" name="securitynumber">
+		  </div>
 		</form>
 	</div>
 @endsection

@@ -19,7 +19,7 @@ class User extends Authenticatable
 
     public function registrations()
     {
-        return $this->belongsTo('Registration');
+        return $this->hasOne('App\Registration');
     }
 
     /**

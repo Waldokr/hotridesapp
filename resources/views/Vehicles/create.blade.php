@@ -24,7 +24,7 @@
 		  </div>
 		  <div class="form-group">
 		  	<label>Year</label>
-		  	<input type="text" class="form-control" id='Year' name="Year">
+		  	<input type="text" class="form-control" id='year' name="year">
 		  </div>
 		  <div class="form-group">
 		  	<button type="submit" class="btn btn-primary">Register</button>
