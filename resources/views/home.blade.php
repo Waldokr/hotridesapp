@@ -15,6 +15,17 @@
                     @endif
 
                     You are logged in!
+                    @if (Auth::user()->isAdmin())
+                        @include('admin')
+                    @endif
+                    <br/>
+                    <center><h1>User View</h1></center>
+                    <a class="btn btn-info" href="{{ url('vehicles/create') }}">
+			            Register Vehicle
+		            </a>
+                    <a class="btn btn-info" href="{{ url('events') }}">
+			            View Events
+		            </a>
                 </div>
             </div>
         </div>

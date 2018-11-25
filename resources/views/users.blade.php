@@ -70,7 +70,7 @@
 		    <input type="text" class="form-control" id="amount" name="experationdate">
 		  </div>
 		  <div class="form-group">
-		    <label>Secuirty Number:</label>
+		    <label>Security Number:</label>
 		    <input type="text" class="form-control" id="amount" name="securitynumber">
 		  </div>
 		</form>
