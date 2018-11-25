@@ -26,6 +26,16 @@
                     <a class="btn btn-info" href="{{ url('events') }}">
 			            View Events
 		            </a>
+                    <a class="btn btn-info" href="{{ url('sponsors') }}">
+                        View Sponsors
+                    </a>
+                    <a class="btn btn-info" href="{{ url('clubs') }}">
+                        View Clubs
+                    </a>
+                    <a class="btn btn-info" href="{{ url('donation/create') }}">
+                        Donate
+                    </a>
+                    
                 </div>
             </div>
         </div>

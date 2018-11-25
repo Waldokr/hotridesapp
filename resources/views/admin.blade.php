@@ -13,6 +13,9 @@
 		<a class="btn btn-info" href="{{ url('events/create') }}">
 			Create New Event
 		</a>
+		<a class="btn btn-info" href="{{ url('clubs/create') }}">
+			Create New Club
+		</a>
 		<br/>
 		<br/>
 		<a class="btn btn-info" href="{{ url('vehicles') }}">
@@ -23,7 +26,12 @@
 		<a class="btn btn-info" href="{{ url('sponsors/create') }}">
 			Register Sponsors
 		</a>
-		<a class="btn btn-info" href="{{ url('sponsors') }}">
-			View Sponsors
+		<br/>
+		<br/>
+		<a class="btn btn-info" href="{{ url('payments') }}">
+			View Payments
+		</a>
+		<a class="btn btn-info" href="{{ url('donations') }}">
+			View Donations
 		</a>
 	</div>

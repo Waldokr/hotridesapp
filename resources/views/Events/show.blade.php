@@ -1,4 +1,4 @@
-<!-- index.blade.php -->
+<!-- index.blade.php 
 
 <!DOCTYPE html>
 <html>
@@ -7,7 +7,9 @@
     <title>Events</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
   </head>
-  <body>
+  <body>-->
+  @extends('layouts.app')
+  @section('content')
     <div class="container">
     <br />
     @if (\Session::has('success'))
@@ -24,7 +26,9 @@
         <th>Early Cost</th>
         <th>Regular Cost</th>
         <th>Date Created</th>
-        <th colspan="2">Action</th>
+        @if (Auth::user()->isAdmin())
+          <th colspan="2">Action</th>
+        @endif
       </tr>
     </thead>
     <tbody>
@@ -35,9 +39,9 @@
         <td>{{$event['id']}}</td>
         <td>{{$event['name']}}</td>
         <td>{{$event['date']}}</td>
-        <td>{{$event['early_cost']}}</td>
-        <td>{{$event['reg_cost']}}</td>
-        
+        <td>${{$event['early_cost']}}</td>
+        <td>${{$event['reg_cost']}}</td>
+        @if (Auth::user()->isAdmin())
         <td><a href="{{action('EventController@edit', $event['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>
           <form action="{{action('EventController@destroy', $event['id'])}}" method="post">
@@ -46,10 +50,10 @@
             <button class="btn btn-danger" type="submit">Delete</button>
           </form>
         </td>
+        @endif
       </tr>
       @endforeach
     </tbody>
   </table>
   </div>
-  </body>
-</html>
+@endsection

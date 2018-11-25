@@ -1,4 +1,4 @@
-<!-- index.blade.php -->
+<!-- index.blade.php 
 
 <!DOCTYPE html>
 <html>
@@ -7,7 +7,9 @@
     <title>Donations Made</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
   </head>
-  <body>
+  <body>-->
+  @extends('layouts.app')
+@section('content')
     <div class="container">
     <br />
     @if (\Session::has('success'))
@@ -25,7 +27,9 @@
         <th>Carholder Name</th>
         <th>Amount Charged</th>
         <th>Date Created</th>
-        <th colspan="2">Action</th>
+        @if (Auth::user()->isAdmin())
+          <th colspan="2">Action</th>
+        @endif
       </tr>
     </thead>
     <tbody>
@@ -39,7 +43,7 @@
         <td>{{$donation['expiry']}}</td>
         <td>{{$donation['name']}}</td>
         <td>{{$donation['charge']}}</td>
-        
+        @if (Auth::user()->isAdmin())
         <td><a href="{{action('DonationController@edit', $donation['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>
           <form action="{{action('DonationController@destroy', $donation['id'])}}" method="post">
@@ -48,10 +52,10 @@
             <button class="btn btn-danger" type="submit">Delete</button>
           </form>
         </td>
+        @endif
       </tr>
       @endforeach
     </tbody>
   </table>
   </div>
-  </body>
-</html>
+@endsection
