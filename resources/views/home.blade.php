@@ -35,7 +35,17 @@
                     <a class="btn btn-info" href="{{ url('donation/create') }}">
                         Donate
                     </a>
-                    
+                    <a class="btn btn-info" href="{{ url('payments') }}">
+                        View Payments
+                    </a>
+                    <br/>
+                    <br/>
+                    <a class="btn btn-info" href="{{ url('donations') }}">
+                        View Donations
+                    </a>
+                    <a class="btn btn-info" href="{{ url('vehicles') }}">
+                        View Vehicles
+                    </a>
                 </div>
             </div>
         </div>

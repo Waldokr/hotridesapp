@@ -5,33 +5,28 @@
         </div>
     </div>
     <div class="col-sm-8 blog-main">
-		<a class="btn btn-info" href="{{ url('Users') }}">
-			View Users
-		</a>
-		<br/>
-		<br/>
-		<a class="btn btn-info" href="{{ url('events/create') }}">
-			Create New Event
-		</a>
-		<a class="btn btn-info" href="{{ url('clubs/create') }}">
-			Create New Club
-		</a>
-		<br/>
-		<br/>
-		<a class="btn btn-info" href="{{ url('vehicles') }}">
-			View Vehicles
-		</a>
-		<br/>
-		<br/>
-		<a class="btn btn-info" href="{{ url('sponsors/create') }}">
-			Register Sponsors
-		</a>
-		<br/>
-		<br/>
-		<a class="btn btn-info" href="{{ url('payments') }}">
-			View Payments
-		</a>
-		<a class="btn btn-info" href="{{ url('donations') }}">
-			View Donations
-		</a>
+	<table>
+		<tr>
+		<td>
+			<a class="btn btn-info" href="{{ url('Users') }}">
+				View Users
+			</a>
+		</td>
+		<td>
+			<a class="btn btn-info" href="{{ url('events/create') }}">
+				Create New Event
+			</a>
+		</td>
+		<td>
+			<a class="btn btn-info" href="{{ url('clubs/create') }}">
+				Create New Club
+			</a>
+		</td>
+		<td>
+			<a class="btn btn-info" href="{{ url('sponsors/create') }}">
+				Register Sponsors
+			</a>
+		</td>
+		</tr>
+		</table>
 	</div>
