@@ -1,13 +1,15 @@
-<!-- index.blade.php -->
+<!-- index.blade.php 
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Events</title>
+    <title>Registrations</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
   </head>
-  <body>
+  <body>-->
+  @extends('layouts.app')
+@section('content')
     <div class="container">
     <br />
     @if (\Session::has('success'))
@@ -23,7 +25,9 @@
         <th>Payment Recieved</th>
         <th>represented Club</th>
         <th>Registered Vehicle</th>
-        <th colspan="2">Action</th>
+        @if (Auth::user()->isAdmin())
+          <th colspan="2">Action</th>
+        @endif
       </tr>
     </thead>
     <tbody>
@@ -36,7 +40,7 @@
         <td>{{$registration['payment_id']}}</td>
         <td>{{$registration['club_id']}}</td>
         <td>{{$registration['vehicle_id']}}</td>
-        
+        @if (Auth::user()->isAdmin())
         <td><a href="{{action('RegistrationController@edit', $registration['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>
           <form action="{{action('RegistrationController@destroy', $registration['id'])}}" method="post">
@@ -45,10 +49,10 @@
             <button class="btn btn-danger" type="submit">Delete</button>
           </form>
         </td>
+        @endif
       </tr>
       @endforeach
     </tbody>
   </table>
   </div>
-  </body>
-</html>
+@endsection

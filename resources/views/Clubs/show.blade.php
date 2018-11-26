@@ -1,4 +1,4 @@
-<!-- index.blade.php -->
+<!-- index.blade.php 
 
 <!DOCTYPE html>
 <html>
@@ -7,7 +7,9 @@
     <title>Vehicles</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
   </head>
-  <body>
+  <body>-->
+  @extends('layouts.app')
+@section('content')
     <div class="container">
     <br />
     @if (\Session::has('success'))
@@ -21,7 +23,9 @@
         <th>ID</th>
         <th>Club Title</th>
         <th>Region</th>
-        <th colspan="2">Action</th>
+        @if (Auth::user()->isAdmin())
+         <th colspan="2">Action</th>
+        @endif
       </tr>
     </thead>
     <tbody>
@@ -32,7 +36,7 @@
         <td>{{$club['id']}}</td>
         <td>{{$club['name']}}</td>
         <td>{{$club['region']}}</td>
-        
+        @if (Auth::user()->isAdmin())
         <td><a href="{{action('ClubController@edit', $club['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>
           <form action="{{action('ClubController@destroy', $club['id'])}}" method="post">
@@ -41,10 +45,10 @@
             <button class="btn btn-danger" type="submit">Delete</button>
           </form>
         </td>
+        @endif
       </tr>
       @endforeach
     </tbody>
   </table>
   </div>
-  </body>
-</html>
+@endsection
