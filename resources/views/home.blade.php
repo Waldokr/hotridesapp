@@ -20,32 +20,65 @@
                     @endif
                     <br/>
                     <center><h1>User View</h1></center>
-                    <a class="btn btn-info" href="{{ url('vehicles/create') }}">
-			            Register Vehicle
-		            </a>
-                    <a class="btn btn-info" href="{{ url('events') }}">
+                    <table>
+                    <tr>
+                        <td>
+                        <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('vehicles/create') }}">
+                            Register Vehicle
+                        </a>
+                        </td>
+                        <td>
+                        <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('vehicles') }}">
+                            View Vehicles
+                        </a>
+                        </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('events') }}">
 			            View Events
 		            </a>
-                    <a class="btn btn-info" href="{{ url('sponsors') }}">
-                        View Sponsors
-                    </a>
-                    <a class="btn btn-info" href="{{ url('clubs') }}">
-                        View Clubs
-                    </a>
-                    <a class="btn btn-info" href="{{ url('donation/create') }}">
-                        Donate
-                    </a>
-                    <a class="btn btn-info" href="{{ url('payments') }}">
-                        View Payments
-                    </a>
-                    <br/>
-                    <br/>
-                    <a class="btn btn-info" href="{{ url('donations') }}">
-                        View Donations
-                    </a>
-                    <a class="btn btn-info" href="{{ url('vehicles') }}">
-                        View Vehicles
-                    </a>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('sponsors') }}">
+                            View Sponsors
+                        </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('clubs') }}">
+                            View Clubs
+                        </a>
+                        </td>
+                        <td>
+                        <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('clubs/create') }}">
+                            Create New Club
+                        </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('payments') }}">
+                            View Payments
+                        </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('donation/create') }}">
+                            Donate
+                        </a>
+                        </td>
+                        <td>
+                        <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('donations') }}">
+                            View Donations
+                        </a>
+                        </td>
+                    </tr>
+                    </table>
                 </div>
             </div>
         </div>
