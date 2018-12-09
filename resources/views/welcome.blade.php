@@ -80,10 +80,24 @@
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif
+                        <a href="{{ route('events')}}">View Events</a>
                     @endauth
                     @endif
                 </div>
             </div>
         </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+              
+              </tr>
+            </tbody>
+        </table>
     </body>
 </html>

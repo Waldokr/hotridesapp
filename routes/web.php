@@ -88,4 +88,7 @@ Route::get('/registrations', 'RegistrationController@index')->name('registration
 Route::post('/registrations/{registration}', 'RegistrationController@update');
 
 
-Route::get('/users', 'UsersController@index')->name('users');
+Route::get('/users', 'UserController@index')->name('users');
+
+Route::get('/financial', 'FinancialController@index')->name('financial');
+                                                                                                                        
