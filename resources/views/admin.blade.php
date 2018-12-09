@@ -8,7 +8,14 @@
 	<table>
 		<tr>
 		<td>
-			<a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('Users') }}">
+			<a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('financial') }}">
+				Financial Report
+			</a>
+		</td>
+		</tr>
+		<tr>
+		<td>
+			<a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('users') }}">
 				View Users
 			</a>
 		</td>

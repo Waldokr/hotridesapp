@@ -35,6 +35,13 @@
                     </tr>
                     <tr>
                     <td>
+                    <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('payments/create') }}">
+                            Make Payment
+                        </a>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
                     <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('events') }}">
 			            View Events
 		            </a>
@@ -68,7 +75,7 @@
                     </tr>
                     <tr>
                         <td>
-                        <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('donation/create') }}">
+                        <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('donations/create') }}">
                             Donate
                         </a>
                         </td>
