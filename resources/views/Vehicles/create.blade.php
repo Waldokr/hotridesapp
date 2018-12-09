@@ -27,6 +27,10 @@
 		  	<input type="text" class="form-control" id='year' name="year">
 		  </div>
 		  <div class="form-group">
+		  		<label>Photo of your vehicle</label>
+		  		<input type="file" accept=".jpg,.jpeg,.png,.tiff,.pdf,.bmp" id='image' name="image">
+		  </div>
+		  <div class="form-group">
 		  	<button type="submit" class="btn btn-primary">Register</button>
 		  </div>
 		</form>
