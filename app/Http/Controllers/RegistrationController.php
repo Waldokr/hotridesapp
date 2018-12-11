@@ -38,7 +38,6 @@ class RegistrationController extends Controller
         $vehicle->year=$request->get('year');
         $vehicle->save();
 
-
         $payment= new \App\Payment;
         $payment->type=$request->get('type');
         $payment->user_id = \Auth::user()->id;
@@ -85,7 +84,6 @@ class RegistrationController extends Controller
         $vehicle->colour=$request->get('colour');
         $vehicle->year=$request->get('year');
         $vehicle->save();
-
 
         $payment= \App\Payment::find($registration->payment_id);
         $payment->type=$request->get('type');
