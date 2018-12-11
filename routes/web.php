@@ -26,11 +26,9 @@ Route::get('/admin', 'AdminController@admin')
     
 Route::resource('events','EventController');
 
-Route::resource('/events/create', 'EventController@create')->middleware('is_admin');
+Route::post('/events/create', 'EventController@create')->middleware('is_admin');
 
 Route::post('/events', 'EventController@store');
-Route::post('/events', 'EventController@edit');
-Route::post('/events', 'EventController@destroy');
 
 Route::get('/events', 'EventController@index')->name('events');
 
@@ -41,6 +39,7 @@ Route::post('/events/{event}', 'EventController@update');
 Route::resource('vehicles','VehicleController');
 
 Route::post('/vehicles', 'VehicleController@store');
+Route::post('/vehicles', 'VehicleController@edit');
 
 Route::get('/vehicles', 'VehicleController@index')->name('vehicles');
 
@@ -76,9 +75,11 @@ Route::post('/donations/{donation}', 'DonationController@update');
 
 Route::resource('sponsors','SponsorController');
 
-Route::resource('sponsors/create','SponsorController@create')->middleware('is_admin');
+Route::post('sponsors/create','SponsorController@create')->middleware('is_admin');
 
 Route::post('/sponsors', 'SponsorController@store');
+
+Route::post('/sponsors/{sponsor}/edit', 'SponsorController@edit');
 
 Route::get('/sponsors', 'SponsorController@index')->name('sponsors');
 
@@ -88,6 +89,8 @@ Route::post('/sponsors/{sponsor}', 'SponsorController@update');
 Route::resource('registrations','RegistrationController');
 
 Route::post('/registrations', 'RegistrationController@store');
+
+Route::post('/registrations', 'RegistrationController@edit');
 
 Route::get('/registrations', 'RegistrationController@index')->name('registrations');
 
