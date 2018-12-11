@@ -8,22 +8,28 @@
 	<table>
 		<tr>
 		<td>
-			<a class="btn btn-info" href="{{ url('Users') }}">
+			<a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('financial') }}">
+				Financial Report
+			</a>
+		</td>
+		</tr>
+		<tr>
+		<td>
+			<a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('users') }}">
 				View Users
 			</a>
 		</td>
+		</tr>
+		<tr>
 		<td>
-			<a class="btn btn-info" href="{{ url('events/create') }}">
+			<a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('events/create') }}">
 				Create New Event
 			</a>
 		</td>
+		</tr>
+		<tr>
 		<td>
-			<a class="btn btn-info" href="{{ url('clubs/create') }}">
-				Create New Club
-			</a>
-		</td>
-		<td>
-			<a class="btn btn-info" href="{{ url('sponsors/create') }}">
+			<a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('sponsors/create') }}">
 				Register Sponsors
 			</a>
 		</td>

@@ -18,7 +18,7 @@ class CreateSponsorsTable extends Migration
             $table->integer('event_id');
             $table->string('name');
             $table->string('description');
-            $table->string('charge');
+            $table->float('charge');
             $table->timestamps();
         });
     }

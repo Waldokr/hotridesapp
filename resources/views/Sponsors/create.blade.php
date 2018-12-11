@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-sm-8 blog-main">
-		<h1>Register Vehicle</h1>
+		<h1>Sign Up A Sponsor</h1>
 		<form method="POST" action="/sponsors">
 
         	{{ csrf_field() }} 

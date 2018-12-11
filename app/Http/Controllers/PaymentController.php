@@ -29,6 +29,7 @@ class PaymentController extends Controller
 
         $payment= new \App\Payment;
         $payment->type=$request->get('type');
+        $payment->user_id = \Auth::user()->id;
         $payment->number = $request->get('number');
         $payment->expiry=$request->get('expiry');
         $payment->name=$request->get('name');
