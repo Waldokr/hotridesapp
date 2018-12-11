@@ -26,6 +26,8 @@ Route::get('/admin', 'AdminController@admin')
     
 Route::resource('events','EventController');
 
+Route::post('/events/create', 'EventController@create')->middleware('is_admin');
+
 Route::post('/events', 'EventController@store');
 
 Route::get('/events', 'EventController@index')->name('events');
@@ -37,6 +39,7 @@ Route::post('/events/{event}', 'EventController@update');
 Route::resource('vehicles','VehicleController');
 
 Route::post('/vehicles', 'VehicleController@store');
+Route::post('/vehicles', 'VehicleController@edit');
 
 Route::get('/vehicles', 'VehicleController@index')->name('vehicles');
 
@@ -72,7 +75,11 @@ Route::post('/donations/{donation}', 'DonationController@update');
 
 Route::resource('sponsors','SponsorController');
 
+Route::post('sponsors/create','SponsorController@create')->middleware('is_admin');
+
 Route::post('/sponsors', 'SponsorController@store');
+
+Route::post('/sponsors/{sponsor}/edit', 'SponsorController@edit');
 
 Route::get('/sponsors', 'SponsorController@index')->name('sponsors');
 
@@ -83,6 +90,8 @@ Route::resource('registrations','RegistrationController');
 
 Route::post('/registrations', 'RegistrationController@store');
 
+Route::post('/registrations', 'RegistrationController@edit');
+
 Route::get('/registrations', 'RegistrationController@index')->name('registrations');
 
 Route::post('/registrations/{registration}', 'RegistrationController@update');
@@ -90,5 +99,5 @@ Route::post('/registrations/{registration}', 'RegistrationController@update');
 
 Route::get('/users', 'UserController@index')->name('users');
 
-Route::get('/financial', 'FinancialController@index')->name('financial');
+Route::get('/financial', 'FinancialController@index') ->middleware('is_admin') ->name('financial');
                                                                                                                         

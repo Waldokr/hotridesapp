@@ -5,7 +5,11 @@
 @section('content')
 
     <div class="col-sm-8 blog-main">
+<<<<<<< HEAD
 		<h1>Sign Up A Sponsor</h1>
+=======
+		<h1>Register Sponsor</h1>
+>>>>>>> c750a3a56b5a8e48b2a5bb9427b141e0008a5408
 		<form method="POST" action="/sponsors">
 
         	{{ csrf_field() }} 

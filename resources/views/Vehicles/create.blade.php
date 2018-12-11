@@ -28,7 +28,7 @@
 		  </div>
 		  <div class="form-group">
 		  		<label>Photo of your vehicle</label>
-		  		<input type="file" accept=".jpg,.jpeg,.png,.tiff,.pdf,.bmp" id='image' name="image">
+		  		<input type="file" accept=".jpg,.jpeg,.png,.tiff,.pdf,.bmp" id='car_photo' name="car_photo">
 		  </div>
 		  <div class="form-group">
 		  	<button type="submit" class="btn btn-primary">Register</button>

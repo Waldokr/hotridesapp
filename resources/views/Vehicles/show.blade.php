@@ -25,9 +25,9 @@
         <th>Model</th>
         <th>Colour</th>
         <th>Year</th>
-        @if (Auth::user()->isAdmin())
+        
           <th colspan="2">Action</th>
-        @endif
+       
       </tr>
     </thead>
     <tbody>
@@ -40,6 +40,18 @@
         <td>{{$vehicle['model']}}</td>
         <td>{{$vehicle['colour']}}</td>
         <td>{{$vehicle['year']}}</td>
+        @foreach($registrations as $registration)
+        @if (Auth::user()->isAdmin() == false & $vehicle['id'] == $registration['vehicle_id'] & $registration['user_id'] == Auth::user()->id)
+        <td><a href="{{action('VehicleController@edit', $vehicle['id'])}}" class="btn btn-warning">Edit</a></td>
+        <td>
+          <form action="{{action('VehicleController@destroy', $vehicle['id'])}}" method="post">
+            @csrf
+            <input name="_method" type="hidden" value="DELETE">
+            <button class="btn btn-danger" type="submit">Delete</button>
+          </form>
+        </td>
+        @endif
+        @endforeach
         @if (Auth::user()->isAdmin())
         <td><a href="{{action('VehicleController@edit', $vehicle['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>
@@ -54,5 +66,6 @@
       @endforeach
     </tbody>
   </table>
+  
   </div>
 @endsection

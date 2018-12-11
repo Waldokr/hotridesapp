@@ -15,7 +15,7 @@ class Vehicle extends Model
              'model'=> request('model'),
              'colour'=> request('colour'),
              'year'=> request('year'),
-          
+             'car_photo' => request('car_photo'),
              
              //'user_id' => auth()->id()
          ]);

@@ -86,18 +86,8 @@
                 </div>
             </div>
         </div>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Date</th>
-                </tr>
-            </thead>
-            <tbody>
-              <tr>
-              
-              </tr>
-            </tbody>
-        </table>
+        <img src="{{ asset('storage/public/upload/example.png') }}" alt="">
+        <img src="{{ asset('storage/public/upload/example1.png') }}" alt="">
+        <img src="{{ asset('storage/public/upload/example2.png') }}" alt="">
     </body>
 </html>
