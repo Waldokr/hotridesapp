@@ -26,6 +26,8 @@ Route::get('/admin', 'AdminController@admin')
     
 Route::resource('events','EventController');
 
+Route::resource('/events', 'EventController@create')->middleware('is_admin');
+
 Route::post('/events', 'EventController@store');
 
 Route::get('/events', 'EventController@index')->name('events');
@@ -72,6 +74,8 @@ Route::post('/donations/{donation}', 'DonationController@update');
 
 Route::resource('sponsors','SponsorController');
 
+Route::resource('sponsors','SponsorController@create')->middleware('is_admin');
+
 Route::post('/sponsors', 'SponsorController@store');
 
 Route::get('/sponsors', 'SponsorController@index')->name('sponsors');
@@ -90,5 +94,5 @@ Route::post('/registrations/{registration}', 'RegistrationController@update');
 
 Route::get('/users', 'UserController@index')->name('users');
 
-Route::get('/financial', 'FinancialController@index')->name('financial');
+Route::get('/financial', 'FinancialController@index') ->middleware('is_admin') ->name('financial');
                                                                                                                         
