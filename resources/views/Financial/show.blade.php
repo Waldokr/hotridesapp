@@ -33,11 +33,11 @@
         }
         if (count($result2) > $count)
         {
-            $count = count($result1);
+            $count = count($result2);
         }
         if (count($result3) > $count)
         {
-            $count = count($result1);
+            $count = count($result3);
         }
 
        for ($index = 0; $index < $count; $index++)
