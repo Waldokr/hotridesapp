@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Person;
+use Image;
 
 class VehicleController extends Controller
 {
@@ -29,8 +31,10 @@ class VehicleController extends Controller
         $vehicle->colour=$request->get('colour');
         $vehicle->year=$request->get('year');
         if ($request->hasFile('car_photo')){
-            $filename = $request->file->getClientOriginalName();
-            $request->file->storeAs('public/upload',$filename);
+            $photoName = time().'.'.$request->car_photo->getClientOriginalName();
+            
+            $request->car_photo->move(public_path('cars'), $photoName);
+        $vehicle->image_name = $photoName;
         }
         $vehicle->save();
         
@@ -54,8 +58,10 @@ class VehicleController extends Controller
         $vehicle->colour=$request->get('colour');
         $vehicle->year=$request->get('year');
         if ($request->hasFile('car_photo')){
-            $filename = $request->file->getClientOriginalName();
-            return $request->file->storeAs('public/upload',$filename);
+            $file = $request->file->getClientOriginalName();
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $Image::make($file)->resize(200,200)->save( storage_path('storage/app/Images'));
+        $vehicle->image_name = $filename;
         }
         $vehicle->save();
         

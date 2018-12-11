@@ -5,26 +5,34 @@
 @section('content')
 
     <div class="col-sm-8 blog-main">
-		<h1>Register Sponsor</h1>
+		<h1>Register Vehicle</h1>
 		<form method="POST" action="/sponsors">
 
         	{{ csrf_field() }} 
 
 		  <div class="form-group">
-		    <label for="title">Sponsored Event:</label>
-		    <input type="text" class="form-control" id='event_id' name="event_id">
+				<div class="form-label-group">
+						<input id="event_id" type="text" class="form-control" name="event_id" placeholder="Sponsored Event:">
+						<label for="event_id">Sponsored Event:</label>
+				</div>
 		  </div>
           <div class="form-group">
-		  	<label>Sponsor Name:</label>
-		  	<input type="text" class="form-control" id='name'  name="name">
+				<div class="form-label-group">
+						<input id="name" type="text" class="form-control" name="name" placeholder="Sponsor Name:">
+						<label for="name">Sponsor Name:</label>
+				</div>
 		  </div>		 
 		  <div class="form-group">
-		  	<label>Agreement Description</label>
-		  	<input type="text" class="form-control" id='description'  name="description">
+				<div class="form-label-group">
+						<input id="description" type="text" class="form-control" name="description" placeholder="Agreement Description">
+						<label for="description">Agreement Description</label>
+				</div>
 		  </div>
 		  <div class="form-group">
-		  	<label>Negotiated Price:</label>
-		  	<input type="text" class="form-control" id='charge' name="charge">
+				<div class="form-label-group">
+						<input id="charge" type="text" class="form-control" name="charge" placeholder="Negotiated Price:">
+						<label for="charge">Negotiated Price:</label>
+				</div>
 		  </div>
 		  <div class="form-group">
 		  	<button type="submit" class="btn btn-primary">Register</button>
