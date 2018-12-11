@@ -28,6 +28,10 @@ class VehicleController extends Controller
         $vehicle->model = $request->get('model');
         $vehicle->colour=$request->get('colour');
         $vehicle->year=$request->get('year');
+        if ($request->hasFile('car_photo')){
+            $filename = $request->file->getClientOriginalName();
+            $request->file->storeAs('public/upload',$filename);
+        }
         $vehicle->save();
         
         return redirect('vehicles');
@@ -49,6 +53,10 @@ class VehicleController extends Controller
         $vehicle->model = $request->get('model');
         $vehicle->colour=$request->get('colour');
         $vehicle->year=$request->get('year');
+        if ($request->hasFile('car_photo')){
+            $filename = $request->file->getClientOriginalName();
+            return $request->file->storeAs('public/upload',$filename);
+        }
         $vehicle->save();
         
         return redirect('vehicles');
