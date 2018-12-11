@@ -21,11 +21,10 @@
     <thead>
       <tr>
         <th>ID</th>
+        <th>User ID</th>
         <th>Club Title</th>
         <th>Region</th>
-        @if (Auth::user()->isAdmin())
          <th colspan="2">Action</th>
-        @endif
       </tr>
     </thead>
     <tbody>
@@ -34,9 +33,10 @@
      
       <tr>
         <td>{{$club['id']}}</td>
+        <td>{{$club['user_id']}}</td>
         <td>{{$club['name']}}</td>
         <td>{{$club['region']}}</td>
-        @if (Auth::user()->isAdmin())
+        @if (Auth::user()->isAdmin() || $club['user_id'] == Auth::user()->id)
         <td><a href="{{action('ClubController@edit', $club['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>
           <form action="{{action('ClubController@destroy', $club['id'])}}" method="post">

@@ -24,6 +24,7 @@ class ClubController extends Controller
 
         $club= new \App\Club;
         $club->name=$request->get('name');
+        $club->user_id = \Auth::user()->id;
         $club->region = $request->get('region');
         $club->description=$request->get('description');
         $club->save();
