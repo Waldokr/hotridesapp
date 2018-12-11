@@ -40,11 +40,13 @@ class ClubController extends Controller
             'description' => 'required'
         ]);
 
-        $club= \App\Vehicle::find($id);
+        $club= \App\Club::find($id);
         $club->name=$request->get('name');
         $club->region = $request->get('region');
         $club->description=$request->get('description');
         $club->save();
+
+        return redirect('clubs');
     }
 
 
