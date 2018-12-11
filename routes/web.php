@@ -38,8 +38,9 @@ Route::post('/events/{event}', 'EventController@update');
 
 Route::resource('vehicles','VehicleController');
 
+Route::post('/vehicles/create', 'VehicleController@create');
+
 Route::post('/vehicles', 'VehicleController@store');
-Route::post('/vehicles', 'VehicleController@edit');
 
 Route::get('/vehicles', 'VehicleController@index')->name('vehicles');
 

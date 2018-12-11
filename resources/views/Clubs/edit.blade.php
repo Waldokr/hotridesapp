@@ -11,16 +11,22 @@
         	{{ csrf_field() }} 
 
 		  <div class="form-group">
-		    <label for="title">Club Title:</label>
-		    <input type="text" class="form-control" id='name' name="name">
+				<div class="form-label-group">
+						<input id="title" type="text" class="form-control" name="title" placeholder="Club Title:">
+						<label for="title">Club Title:</label>
+				</div>
 		  </div>
-          <div class="form-group">
-		  	<label>Region of Representation:</label>
-		  	<input type="text" class="form-control" id='region'  name="region">
+			<div class="form-group">
+				<div class="form-label-group">
+					<input id="region" type="text" class="form-control" name="region" placeholder="Region of Representation:">
+					<label for="region">Region of Representation:</label>
+				</div>
 		  </div>		 
 		  <div class="form-group">
-		  	<label>Description</label>
-		  	<input type="text" class="form-control" id='description'  name="description">
+				<div class="form-label-group">
+						<input id="description" type="text" class="form-control" name="description" placeholder="Description">
+						<label for="description">Description</label>
+				</div>
 		  </div>
 		  <div class="form-group">
 		  	<button type="submit" class="btn btn-primary">Register</button>

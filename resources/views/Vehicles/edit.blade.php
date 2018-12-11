@@ -11,20 +11,28 @@
         	{{ csrf_field() }} 
 
 		  <div class="form-group">
-		    <label for="title">Make:</label>
-		    <input type="text" class="form-control" id='make' name="make" value="{{$vehicle->make}}">
+				<div class="form-label-group">
+						<input id="make" type="text" class="form-control" name="make" placeholder="Make:" value="{{$vehicle->make}}">
+						<label for="make">Make:</label>
+				</div>
 		  </div>
 		  <div class="form-group">
-		    <label for="body">Model:</label>
-            <input type="text" class="form-control" id='model'  name="model" value="{{$vehicle->model}}">   
+						<div class="form-label-group">
+						<input id="model" type="text" class="form-control" name="model" placeholder="Model:" value="{{$vehicle->model}}">
+						<label for="model">Model:</label>
+				</div>
 		  </div>
 		  <div class="form-group">
-		  	<label>Colour</label>
-		  	<input type="text" class="form-control" id='colour'  name="colour" value="{{$vehicle->colour}}">
+				<div class="form-label-group">
+						<input id="colour" type="text" class="form-control" name="colour" placeholder="Colour:" value="{{$vehicle->colour}}">
+						<label for="colour">Colour:</label>
+				</div>
 		  </div>
 		  <div class="form-group">
-		  	<label>Year</label>
-		  	<input type="text" class="form-control" id='year' name="year" value="{{$vehicle->year}}">
+				<div class="form-label-group">
+						<input id="year" type="text" class="form-control" name="year" placeholder="Year:" value="{{$vehicle->year}}">
+						<label for="year">Year:</label>
+				</div>
 		  </div>
 		  <div class="form-group">
 		  	<button type="submit" class="btn btn-primary">Confirm</button>

@@ -21,7 +21,8 @@ class VehicleController extends Controller
             'make' => 'required',
             'model' => 'required',
             'colour' => 'required',
-            'year' => 'required'
+            'year' => 'required',
+            'car_photo' => 'required'
         ]);
 
 
@@ -57,12 +58,6 @@ class VehicleController extends Controller
         $vehicle->model = $request->get('model');
         $vehicle->colour=$request->get('colour');
         $vehicle->year=$request->get('year');
-        if ($request->hasFile('car_photo')){
-            $file = $request->file->getClientOriginalName();
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-            $Image::make($file)->resize(200,200)->save( storage_path('storage/app/Images'));
-        $vehicle->image_name = $filename;
-        }
         $vehicle->save();
         
         return redirect('vehicles');

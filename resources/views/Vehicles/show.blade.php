@@ -25,6 +25,7 @@
         <th>Model</th>
         <th>Colour</th>
         <th>Year</th>
+        <th>Image</th>
         
           <th colspan="2">Action</th>
        
@@ -40,6 +41,7 @@
         <td>{{$vehicle['model']}}</td>
         <td>{{$vehicle['colour']}}</td>
         <td>{{$vehicle['year']}}</td>
+        <td><img src="{{ $vehicle['image'] }}" alt="Missing Image"/></td>
         @foreach($registrations as $registration)
         @if (Auth::user()->isAdmin() == false & $vehicle['id'] == $registration['vehicle_id'] & $registration['user_id'] == Auth::user()->id)
         <td><a href="{{action('VehicleController@edit', $vehicle['id'])}}" class="btn btn-warning">Edit</a></td>

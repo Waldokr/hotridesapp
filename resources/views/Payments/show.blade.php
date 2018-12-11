@@ -20,7 +20,7 @@
     <table class="table table-striped">
     <thead>
       <tr>
-        <th>ID</th>
+        <th>ID</th> 
         <th>Card Type</th>
         <th>Card Number</th>
         <th>Expiry Date</th>

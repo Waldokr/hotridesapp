@@ -16,14 +16,14 @@ class ClubController extends Controller
     {
 
         $this->validate(request(), [
-            'name' => 'required',
+            'title' => 'required',
             'region' => 'required',
             'description' => 'required'
         ]);
 
 
         $club= new \App\Club;
-        $club->name=$request->get('name');
+        $club->name=$request->get('title');
         $club->user_id = \Auth::user()->id;
         $club->region = $request->get('region');
         $club->description=$request->get('description');
