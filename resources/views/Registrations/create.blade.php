@@ -3,19 +3,18 @@
 @extends('layouts.app')
 
 @section('content')
-
 	<div class="col-sm-8 blog-main">	
 		<h1>Choose Your Event</h1>
 		<form method="POST" action="/registrations">
 		  <div class="form-group">
 		
-			{{ csrf_field() }} 
+			{{ csrf_field()}} 
 
 		  <div class="form-group">
 		    <label for="title">Choose Your Event</label>
 		    <input type="text" class="form-control" id='event_id' name="event_id">
 		  </div>
-
+		
 		  <div class="form-group">
 		    <label for="title">Club Representation:</label>
 		    <input type="text" class="form-control" id='club_id' name="club_id">
