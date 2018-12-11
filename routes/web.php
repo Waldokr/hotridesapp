@@ -89,9 +89,9 @@ Route::post('/sponsors/{sponsor}', 'SponsorController@update');
 
 Route::resource('registrations','RegistrationController');
 
-Route::post('/registrations', 'RegistrationController@store');
+Route::post('/registrations/create', 'RegistrationController@create');
 
-Route::post('/registrations', 'RegistrationController@edit');
+Route::post('/registrations', 'RegistrationController@store');
 
 Route::get('/registrations', 'RegistrationController@index')->name('registrations');
 

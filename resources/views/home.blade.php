@@ -23,11 +23,6 @@
                     <table>
                     <tr>
                         <td>
-                        <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('vehicles/create') }}">
-                            Register Vehicle
-                        </a>
-                        </td>
-                        <td>
                         <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('vehicles') }}">
                             View Vehicles
                         </a>
@@ -35,9 +30,19 @@
                     </tr>
                     <tr>
                     <td>
+                        <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('registrations/create') }}">
+                            Register For Event
+                        </a>
+                        </td>
+                    <td>
                     <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('events') }}">
 			            View Events
 		            </a>
+                    <td>
+                        <a class="btn btn-primary btn-lg" style="width:175px" href="{{ url('registrations') }}">
+                            View Registrations
+                        </a>
+                        </td>
                     </td>
                     </tr>
                     <tr>

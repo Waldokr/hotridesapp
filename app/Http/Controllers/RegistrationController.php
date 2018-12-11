@@ -109,11 +109,7 @@ class RegistrationController extends Controller
     public function index()
     {
         $registrations=\App\Registration::all();
-<<<<<<< HEAD
         return view('registrations/show',compact('registrations'));
-=======
-        return view('Register/show',compact('registrations'));
->>>>>>> c750a3a56b5a8e48b2a5bb9427b141e0008a5408
     }
 
     public function edit($id)
