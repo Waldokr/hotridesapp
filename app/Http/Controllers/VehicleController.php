@@ -58,7 +58,8 @@ class VehicleController extends Controller
     public function index()
     {
         $vehicles=\App\Vehicle::all();
-        return view('vehicles/show',compact('vehicles'));
+        $registrations=\App\Registration::all();
+        return view('vehicles/show',compact('vehicles', 'registrations'));
     }
 
     public function edit($id)
