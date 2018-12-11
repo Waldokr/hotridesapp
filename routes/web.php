@@ -76,7 +76,7 @@ Route::post('/donations/{donation}', 'DonationController@update');
 
 Route::resource('sponsors','SponsorController');
 
-Route::resource('sponsors','SponsorController@create')->middleware('is_admin');
+Route::resource('sponsors/create','SponsorController@create')->middleware('is_admin');
 
 Route::post('/sponsors', 'SponsorController@store');
 
