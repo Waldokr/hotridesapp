@@ -26,9 +26,11 @@ Route::get('/admin', 'AdminController@admin')
     
 Route::resource('events','EventController');
 
-Route::resource('/events', 'EventController@create')->middleware('is_admin');
+Route::resource('/events/create', 'EventController@create')->middleware('is_admin');
 
 Route::post('/events', 'EventController@store');
+Route::post('/events', 'EventController@edit');
+Route::post('/events', 'EventController@destroy');
 
 Route::get('/events', 'EventController@index')->name('events');
 

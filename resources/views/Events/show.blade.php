@@ -41,6 +41,7 @@
         <td>{{$event['date']}}</td>
         <td>${{$event['early_cost']}}</td>
         <td>${{$event['reg_cost']}}</td>
+        <td>{{$event['created_at']}}</td>
         @if (Auth::user()->isAdmin())
         <td><a href="{{action('EventController@edit', $event['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>

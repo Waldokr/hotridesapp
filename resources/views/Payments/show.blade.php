@@ -35,7 +35,7 @@
     <tbody>
       
       @foreach($payments as $payment)
-     
+      @if (Auth::user()->isAdmin() || Auth::user()->id == $payment->user_id)
       <tr>
         <td>{{$payment['id']}}</td>
         <td>{{$payment['type']}}</td>
@@ -43,7 +43,7 @@
         <td>{{$payment['expiry']}}</td>
         <td>{{$payment['name']}}</td>
         <td>{{$payment['charge']}}</td>
-        @if (Auth::user()->isAdmin())
+        
         <td><a href="{{action('PaymentController@edit', $payment['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>
           <form action="{{action('PaymentController@destroy', $payment['id'])}}" method="post">
@@ -52,8 +52,9 @@
             <button class="btn btn-danger" type="submit">Delete</button>
           </form>
         </td>
-        @endif
+       
       </tr>
+      @endif
       @endforeach
     </tbody>
   </table>

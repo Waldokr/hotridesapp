@@ -23,24 +23,22 @@
         <th>ID</th>
         <th>Event</th>
         <th>Payment Recieved</th>
-        <th>represented Club</th>
+        <th>Represented Club</th>
         <th>Registered Vehicle</th>
-        @if (Auth::user()->isAdmin())
-          <th colspan="2">Action</th>
-        @endif
+        <th colspan="2">Action</th>
       </tr>
     </thead>
     <tbody>
       
       @foreach($registrations as $registration)
      
+     @if(Auth::user()->isAdmin() || Auth::user()->id == $registration['id'])
       <tr>
         <td>{{$registration['id']}}</td>
         <td>{{$registration['user_id']}}</td>
         <td>{{$registration['payment_id']}}</td>
         <td>{{$registration['club_id']}}</td>
         <td>{{$registration['vehicle_id']}}</td>
-        @if (Auth::user()->isAdmin())
         <td><a href="{{action('RegistrationController@edit', $registration['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>
           <form action="{{action('RegistrationController@destroy', $registration['id'])}}" method="post">
@@ -49,8 +47,8 @@
             <button class="btn btn-danger" type="submit">Delete</button>
           </form>
         </td>
-        @endif
       </tr>
+      @endif
       @endforeach
     </tbody>
   </table>

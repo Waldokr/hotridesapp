@@ -35,14 +35,18 @@
     <tbody>
       
       @foreach($donations as $donation)
-     
+      @if (Auth::user()->isAdmin() || Auth::user()->id == $donation->user_id)
       <tr>
         <td>{{$donation['id']}}</td>
         <td>{{$donation['type']}}</td>
         <td>{{$donation['number']}}</td>
         <td>{{$donation['expiry']}}</td>
         <td>{{$donation['name']}}</td>
-        <td>{{$donation['charge']}}</td>
+        @else
+        <td></td><td></td><td></td><td></td><td></td>
+        @endif
+        <td>${{$donation['charge']}}</td>
+        <td>{{$donation['created_at']}}</td>
         @if (Auth::user()->isAdmin())
         <td><a href="{{action('DonationController@edit', $donation['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>
